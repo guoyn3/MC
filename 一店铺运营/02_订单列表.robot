@@ -3,8 +3,6 @@ Resource          ../Resource.robot
 
 *** Test Cases ***
 订单生成-导入
-    杀进程
-    登录
     Sleep    2
     店铺运营
     Sleep    2
