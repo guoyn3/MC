@@ -1,0 +1,96 @@
+*** Keywords ***
+杀进程
+    Run All Bat    C:\Python27
+    ${executable_path}    Set Variable    C:\\Python27\\chromedriver.exe
+
+登录
+    #-----------------------------
+    #    打开浏览器并登录铁骑
+    #-----------------------------
+    Open Browser    ${login}    Chrome
+    Maximize Browser Window
+    #登录
+    Selenium2Library.Input Text    //div[1]/div/div/input    ${userAccount}
+    Selenium2Library.Input Text    //form/div[2]/div/div/input    ${userPassword}
+    Selenium2Library.Click Button    //div[4]/div/div/button
+    Sleep    2
+    ${index}    Selenium2Library.Get Text    //*[@id="home"]
+    Should Contain    ${index}    首页
+    ${cookie}    get cookies
+    log    ${cookie}
+    log    登录成功
+    Sleep    2
+    Set Global Variable    ${cookie}
+    [Return]    ${cookie}    # 获取cookie
+
+店铺运营
+    Selenium2Library.Click Element    //div[2]/ul/div/li[1]/div
+
+店铺运营->订单列表
+    Selenium2Library.Click Element    //li[1]/ul/div[4]/a/div
+
+店铺运营->售后列表
+    Selenium2Library.Click Element    //li[1]/ul/div[5]/a/div
+
+店铺运营->退货单
+    Selenium2Library.Click Element    //li[1]/ul/div[6]/a/div
+
+交易中心
+    Selenium2Library.Click Element    //li[7]/div
+
+交易中心->订单列表
+    Selenium2Library.Click Element    //li[7]/ul/div[1]/a/div
+
+交易中心->售后列表
+    Selenium2Library.Click Element    //li[7]/ul/div[2]/a/div
+
+交易中心->退货单
+    Selenium2Library.Click Element    //li[7]/ul/div[3]/a/div
+
+构造订单号
+    ${orderId_2}    evaluate    time.strftime('%Y%m%d%H%M%S')    time
+    log    ${orderId_2}
+    Comment    #拼接订单号
+    ${newOrderId}    catenate    SEPARATOR=    guo    ${orderId_2}
+    log    ${newOrderId}
+    Set Global Variable    ${newOrderId}
+
+构造导入订单文件-店铺运营
+    ${orderId_1}    evaluate    time.strftime('%Y%m%d%H%M%S')    time
+    ${orderId}    catenate    SEPARATOR=    guoimport    ${orderId_1}
+    log    ${orderId}
+    Set Global Variable    ${orderId}
+    Sleep    2
+    Open Excel    ${orderTemplate}    useTempDir=true
+    sleep    5
+    Put String To Cell    Sheet1    0    1    ${orderId}
+    sleep    3
+    Save Excel    ${orderTemplate1}
+
+构造导入订单文件-交易中心
+    ${orderId_2}    evaluate    time.strftime('%Y%m%d%H%M%S')    time
+    ${orderId2}    catenate    SEPARATOR=    2guo    ${orderId_2}
+    log    ${orderId2}
+    Set Global Variable    ${orderId2}
+    Sleep    2
+    Open Excel    ${orderTemplate}    useTempDir=true
+    sleep    5
+    Put String To Cell    Sheet1    0    1    ${orderId2}
+    sleep    3
+    Save Excel    ${orderTemplate1}
+
+滚动条置于页面顶部
+    Execute Javascript    document.documentElement.scrollTop=1000
+
+滚动条置于页面底部
+    Execute Javascript    document.documentElement.scrollTop=0
+
+滚动条置于页面最右边
+    Execute Javascript    document.documentElement.scrollTo(1000, 1000)
+
+连接ins_commodity_prd库
+    #-----------------------------
+    #    连接数据库
+    #-----------------------------
+    Connect To Database Using Custom Params    pymysql    database='ins_commodity_prd',user='root',password='123456',host='10.16.98.238',port=3306
+    log    数据库---ins_commodity_prd---连接成功
