@@ -36,16 +36,16 @@
     Selenium2Library.Click Element    //li[1]/ul/div[6]/a/div
 
 交易中心
-    Selenium2Library.Click Element    //li[7]/div
+    Selenium2Library.Click Element    //li[6]/div
 
 交易中心->订单列表
-    Selenium2Library.Click Element    //li[7]/ul/div[1]/a/div
+    Selenium2Library.Click Element    //li[6]/ul/div[1]/a/div
 
 交易中心->售后列表
-    Selenium2Library.Click Element    //li[7]/ul/div[2]/a/div
+    Selenium2Library.Click Element    //li[6]/ul/div[2]/a/div
 
 交易中心->退货单
-    Selenium2Library.Click Element    //li[7]/ul/div[3]/a/div
+    Selenium2Library.Click Element    //li[6]/ul/div[3]/a/div
 
 构造订单号
     ${orderId_2}    evaluate    time.strftime('%Y%m%d%H%M%S')    time
