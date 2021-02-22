@@ -27,10 +27,10 @@ Resource          ../Resource.robot
     Sleep    2
     Control Set Text    \    \    Edit1    ${orderTemplate1}
     #点击打开按钮上传
-    Sleep    2
+    Sleep    5
     Control Click    \    \    Button1
     #刷新列表
-    Sleep    2
+    Sleep    5
     Selenium2Library.Click Button    //div[2]/div[2]/div[1]/div[2]/button[1]
     Sleep    5
     ${order}    Selenium2Library.Get Text    //div[2]/div[1]/div/div[1]/div/label/span[2]/span
