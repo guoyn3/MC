@@ -15,7 +15,7 @@ Resource          ../Resource.robot
     Sleep    2
     Selenium2Library.Click Button    //table/tbody/tr/td[4]/div/button
     Sleep    2
-    构造导入订单文件-店铺运营
+    #构造导入订单文件-店铺运营
     #导入订单
     Sleep    2
     Selenium2Library.Click Button    //div[2]/div[2]/button[1]
