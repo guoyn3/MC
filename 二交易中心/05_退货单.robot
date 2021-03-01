@@ -2,7 +2,7 @@
 Resource          ../Resource.robot
 
 *** Test Cases ***
-查询
+001查询
     Sleep    2
     交易中心->退货单
     Sleep    2
@@ -12,7 +12,7 @@ Resource          ../Resource.robot
     Element Should Contain    //div[2]/div[1]/div/div[2]/span[2]    ${newOrderId}
     log    查询退货单ok
 
-入库
+002入库
     Sleep    2
     Selenium2Library.Click Button    //div[9]/button
     Sleep    2
@@ -21,7 +21,7 @@ Resource          ../Resource.robot
     Element Should Contain    //div/div[4]/span[2]    已退货
     log    入库ok
 
-查看退货单详情
+003查看退货单详情
     Sleep    2
     Selenium2Library.Click Button    //div[8]/button
     Sleep    2
@@ -30,7 +30,7 @@ Resource          ../Resource.robot
     Sleep    2
     Selenium2Library.Click Button    //div[4]/div/div[1]/button
 
-查看换货订单
+004查看换货订单
     Sleep    2
     交易中心->订单列表
     Sleep    2

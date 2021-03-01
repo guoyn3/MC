@@ -2,7 +2,7 @@
 Resource          ../Resource.robot
 
 *** Test Cases ***
-订单生成-手动新建
+001订单生成-手动新建
     构造订单号
     #杀进程
     #登录
@@ -112,7 +112,7 @@ Resource          ../Resource.robot
     Sleep    2
     Selenium2Library.Click Button    //div/div[2]/div[2]/div[1]/button[2]
 
-查询
+002查询
     #通过订单号查询订单
     Sleep    2
     Selenium2Library.Input Text    //form/div/div[1]/div/div/div/input    ${newOrderId}
@@ -122,7 +122,7 @@ Resource          ../Resource.robot
     Element Should Contain    //div[2]/div[1]/div/div[1]/div/label/span[2]/span    ${newOrderId}
     log    查询成功
 
-详情
+003详情
     #-----进入订单详情-----
     Sleep    2
     Selenium2Library.Click Button    //div[5]/button[5]
@@ -136,14 +136,14 @@ Resource          ../Resource.robot
     #Sleep    2
     #Selenium2Library.Click Button    //span/div[2]/button[1]
 
-虚拟发货
+004虚拟发货
     Sleep    2
     Selenium2Library.Click Button    //div[2]/button[11]
     Sleep    2
     Selenium2Library.Click Button    //div/div[3]/button[2]
     log    虚拟发货成功
 
-导出订单
+005导出订单
     #返回列表
     Sleep    2
     Selenium2Library.Click Button    //div[2]/div[2]/button[1]

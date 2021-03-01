@@ -2,7 +2,7 @@
 Resource          ../Resource.robot
 
 *** Test Cases ***
-换货售后单生成
+001换货售后单生成
     Sleep    2
     交易中心->售后列表
     #手工新增售后单
@@ -48,18 +48,18 @@ Resource          ../Resource.robot
     Sleep    2
     Selenium2Library.Click Button    //div[2]/div[2]/button[1]
 
-查询
+002查询
     Sleep    2
     Selenium2Library.Input Text    //form/div/div[1]/div/div/div/input    ${newOrderId}
     Sleep    2
     Selenium2Library.Click Button    //div[2]/div[2]/div[1]/div[2]/button[1]
 
-售后详情
+003售后详情
     #进入详情
     Sleep    2
     Selenium2Library.Click Button    //div[6]/button
 
-审核通过生成退货单
+004审核通过生成退货单
     #审核通过
     Sleep    2
     Selenium2Library.Click Button    //div[2]/div[2]/button[2]
@@ -93,7 +93,7 @@ Resource          ../Resource.robot
     Sleep    2
     Selenium2Library.Click Button    //div[2]/div[2]/button[1]
 
-导出
+005导出
     #导出
     Sleep    2
     Selenium2Library.Click Button    //div[2]/div[2]/button[2]

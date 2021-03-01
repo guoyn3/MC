@@ -2,7 +2,7 @@
 Resource          ../Resource.robot
 
 *** Test Cases ***
-订单生成-导入
+001订单生成-导入
     Sleep    2
     店铺运营
     Sleep    2
@@ -42,7 +42,7 @@ Resource          ../Resource.robot
     Sleep    2
     Remove File    ${orderTemplate1}
 
-查询
+002查询
     #通过订单号查询订单
     Sleep    2
     Selenium2Library.Input Text    //form/div/div[1]/div/div/div/input    ${orderId}
@@ -52,7 +52,7 @@ Resource          ../Resource.robot
     Element Should Contain    //div[2]/div[1]/div/div[1]/div/label/span[2]/span    ${orderId}
     log    查询成功
 
-详情
+003详情
     #-----进入订单详情-----
     Sleep    2
     Selenium2Library.Click Button    //div[5]/button[5]
@@ -66,13 +66,13 @@ Resource          ../Resource.robot
     Sleep    2
     Selenium2Library.Click Button    //td[12]/span/button[1]
 
-审核
+004审核
     Sleep    2
     Selenium2Library.Click Button    //div[2]/button[2]
     Sleep    2
     Selenium2Library.Click Button    //div[3]/button[2]
 
-发货
+005发货
     Sleep    2
     Selenium2Library.Click Button    //div[2]/button[7]
     #填写物流信息
@@ -94,7 +94,7 @@ Resource          ../Resource.robot
     Element Should Contain    //div[2]/div[1]/div/div[6]/span[2]    已发货
     log    发货成功
 
-导出订单
+006导出订单
     #导出
     Sleep    2
     Selenium2Library.Click Button    //div[2]/div[2]/button[2]
