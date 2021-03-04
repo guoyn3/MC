@@ -21,18 +21,18 @@ Resource          ../Resource.robot
     Selenium2Library.Click Button    //div[2]/div[2]/button[1]
     sleep    2
     Selenium2Library.Click Button    //form/div[1]/div/div/div/button
-    sleep    3
+    sleep    2
     Win Wait    打开    #等待含有打开的窗口出现
     #选择文件
     Sleep    2
     Control Set Text    \    \    Edit1    ${orderTemplate1}
     #点击打开按钮上传
-    Sleep    5
+    Sleep    2
     Control Click    \    \    Button1
     #刷新列表
-    Sleep    5
+    Sleep    2
     Selenium2Library.Click Button    //div[2]/div[2]/div[1]/div[2]/button[1]
-    Sleep    5
+    Sleep    2
     ${order}    Selenium2Library.Get Text    //div[2]/div[1]/div/div[1]/div/label/span[2]/span
     log    ${order}
     log    ${orderId}
@@ -101,7 +101,7 @@ Resource          ../Resource.robot
     Sleep    2
     Selenium2Library.Click Button    //div/div[3]/button[2]
     #查看导出队列
-    Sleep    15
+    Sleep    10
     Selenium2Library.Click Element    //img[contains(@src,'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC40lEQVRYR+2WW4hOURTHf3/KJZEhl8HDTAjlQaI8uTaYwRTFw7zICymXXEIaT5pChqEUSp4kLxS5FDIoPCBeXJJEhsGLRqLQ0vraR2c+05x9vu9hUnad+vrOPmv91tpr/dcWPbzUw/75D/BvZcDMHLgBWAtUAqOBX8AH4C1wFDgtyWJrKzoDZlYNnAWmZBh/ACyX9CoGIgrAzDzaO0BViHQncB94A/QCxgDTgabw253PkPQxCyIWoBWYBVwHFkv63pVhM+sHXATmAq2S5pQNYGbjgBdABzBR0vvujJrZKOApMAiYJOlZd/szM2BmzcBmoEXSpqyI/L2ZHQI2APskbc8FYGaDga3AtPAMDQZqJF2LBFgIXA57vUMeA3eBZklf0jY6ZcDMaoGTwIgiR5+B4ZJ+RAL0BT4BA4v2vwNWpgP5A2BmC4Ar4QOn3wW8lOTOS14ho2OB3YAH6KtOUiFDBQAzqwCeA8OAvZJ2lOyxmw/NbD+wBfD2HC+pIwFYDxwGbgDz8ihZHtCgpN7SM4F1ko4kAGeAFcB8SVfzGM27N3XULtkNCUAb4P1bUe6ZZwEFVfVifC2pKgFoD5U/UpK3TdQyM0+nxSheYjAF0C6pMgHw6vcuyHUEZlaYepIyBS0F4J1wyR9JixKAPYArlguNQ0SN07wAoQh9nviMaJLUmAD4NHsShOMgsE3Sz6xzyANgZn1cmoGNgGvLZEltaSFaGua9+3VNOODCJMlHbpcrBiDcI2rCPJkQDNVKKoherBTflDTbzOqBEyF9LWkAM/PIGoFlkm6HAvURnl5e4KsSFfwLIKhiehj5JWMIkAD4deyUVz7gMBeC9SXA+RCQA5xLAbjTR8C9MFE7SXt09aaq+BiwGvgG9A//J7+PS1qTVTvp96UA9A7R1hU58taql+SX1OiVGyAc0wDgFjA1eHro+i7pa7TnsLEkgADhd4bk5ludR0HLOoK8EWbtLzkDWYZj3/c4wG+mJhowo+FW9AAAAABJRU5ErkJggg==')]
     Sleep    2
     ${fileName}    Selenium2Library.Get Text    //div/div[2]/div/div[2]/p[1]
