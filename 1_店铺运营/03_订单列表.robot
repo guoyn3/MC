@@ -9,7 +9,7 @@ Resource          ../Resource.robot
     店铺运营->订单列表
     #选择店铺
     Sleep    2
-    Selenium2Library.Input Text    //div[2]/div/div[1]/div/div/div/input    ${选择店铺}
+    Selenium2Library.Input Text    //div[3]/div/div[1]/div/div/div/input    ${选择店铺}
     Sleep    2
     Selenium2Library.Click Button    //div[2]/div/div[1]/div/div/button[1]
     Sleep    2
