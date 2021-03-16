@@ -23,6 +23,9 @@
     Set Global Variable    ${cookie}
     [Return]    ${cookie}    # 获取cookie
 
+关闭浏览器
+    Close Browser
+
 店铺运营
     Selenium2Library.Click Element    //div[2]/ul/div/li[1]/div
 

@@ -1,6 +1,6 @@
 *** Settings ***
-Library           Selenium2Library
 Resource          keyword.txt
+Library           Selenium2Library
 Library           CustomLibrary
 Library           ExcelLibrary
 Library           AutoItLibrary

@@ -61,3 +61,5 @@ Resource          ../Resource.robot
     Element Should Contain    //div[3]/div[1]/div[2]/div[1]/div/div[2]/span[2]    换货订单
     ${换货订单号}    Selenium2Library.Get Text    //div/label/span[2]/span
     log    退货入库生成换货订单号，换货订单号为：${换货订单号}
+    #关闭浏览器
+    Close Browser
