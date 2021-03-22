@@ -28,6 +28,26 @@
 
 店铺运营
     Selenium2Library.Click Element    //div[2]/ul/div/li[1]/div
+    sleep    3
+
+库存中心
+    click element    //span[contains(.,'库存中心')]
+    sleep    1
+
+库存发布->店铺库存列表
+    #库存发布
+    click element    //*[@id="app"]/div/div[1]/div/div[2]/ul/div/li[5]/ul/div[2]/li/div/span
+    sleep    1
+    click element    //span[contains(.,'店铺库存列表')]
+    sleep    3
+
+库存中心->仓库管理
+    click element    //span[contains(.,'仓库管理')]
+    sleep    5
+
+库存中心->库存查询
+    click element    //span[contains(.,'库存查询')]
+    sleep    5
 
 店铺运营->订单列表
     Selenium2Library.Click Element    //li[1]/ul/div[4]/a/div
@@ -37,6 +57,10 @@
 
 店铺运营->退货单
     Selenium2Library.Click Element    //li[1]/ul/div[6]/a/div
+
+店铺运营->商品列表
+    click element    //*[@id="app"]/div/div[1]/div[2]/ul/div/li[1]/ul/div[2]/a/div/span[2]
+    sleep    3
 
 交易中心
     Selenium2Library.Click Element    //li[6]/div
@@ -97,3 +121,20 @@
     #-----------------------------
     Connect To Database Using Custom Params    pymysql    database='ins_commodity_prd',user='root',password='123456',host='10.16.98.238',port=3306
     log    数据库---ins_commodity_prd---连接成功
+
+杀进程-钟
+    Run All Bat    F:/Python/MC
+
+下拉列表下弹第一个
+    click element    //*[@x-placement="bottom-start"]/div[1]/div[1]/ul/li[1]/span
+    sleep    2
+
+下拉列表上弹第一个
+    click element    //*[@x-placement="top-start"]/div[1]/div[1]/ul/li[1]/span
+    sleep    2
+
+滚动条滚到页面底部
+    execute javascript    document.documentElement.scrollTop=1000
+
+滚动条滚到页面顶部
+    execute javascript    document.documentElement.scrollTop=0
