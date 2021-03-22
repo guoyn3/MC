@@ -20,3 +20,4 @@ ${userPassword}    123456789
 ${选择店铺}           测试店铺0722
 ${orderTemplate}    E:\\zhuanxiang\\UI automation\\robotframework\\document\\orderTemplate.xls
 ${orderTemplate1}    E:\\zhuanxiang\\UI automation\\robotframework\\document\\orderTemplate1.xls
+${message}        //*[@class="el-message el-message--success"]/p
