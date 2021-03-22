@@ -36,7 +36,7 @@
 
 库存发布->店铺库存列表
     #库存发布
-    click element    //*[@id="app"]/div/div[1]/div/div[2]/ul/div/li[5]/ul/div[2]/li/div/span
+    click element    //*[@id="app"]/div/div[1]/div[2]/ul/div/li[4]/ul/div[2]/li/div/span
     sleep    1
     click element    //span[contains(.,'店铺库存列表')]
     sleep    3
@@ -44,6 +44,10 @@
 库存中心->仓库管理
     click element    //span[contains(.,'仓库管理')]
     sleep    5
+
+库存中心->其他出入库
+    click element    //span[contains(.,'其他出入库')]
+    sleep    3
 
 库存中心->库存查询
     click element    //span[contains(.,'库存查询')]
@@ -134,7 +138,7 @@
     sleep    2
 
 滚动条滚到页面底部
-    execute javascript    document.documentElement.scrollTop=1000
+    execute javascript    document.documentElement.scrollTop=0
 
 滚动条滚到页面顶部
-    execute javascript    document.documentElement.scrollTop=0
+    execute javascript    document.documentElement.scrollTop=1000
