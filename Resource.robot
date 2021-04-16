@@ -14,6 +14,8 @@ Library           requests
 Library           json
 
 *** Variables ***
+${login}          xxx
+${password}       xxx
 ${login}          http://10.16.94.56/login
 ${userAccount}    ptadmin
 ${userPassword}    123456789
